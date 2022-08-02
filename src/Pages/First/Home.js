@@ -5,7 +5,9 @@ import Nav from "../../Component/Nav/index"
 import Hero from '../../Component/Hero/index'
 import Top_rated from "../../Component/Main/index"
 import Popular from "../../Component/Main_2/Index"
-import { get_top_rated_movies , get_popular_movies , get_top_rated_tv} from "../../Helper/server"
+import Fotter from "../../Component/Footer/index"
+
+import { get_top_rated_movies , get_popular_movies , get_top_rated_tv } from "../../Helper/server"
 
 const Button = styled.button`
   width=90px;
@@ -103,6 +105,8 @@ function Home() {
       <Top_rated  list = {change_top_reted} />
       
       <Popular list = {popular_movies} />
+       
+       <Fotter />
     </div>
   )
 }

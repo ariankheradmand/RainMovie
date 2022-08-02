@@ -6,6 +6,8 @@ let top_rated_movies = `${base_url}/${movie}/top_rated?api_key=${api_key}`
 let top_rated_tvs = `${base_url}/${tv}/top_rated?api_key=${api_key}`
 let trending_movies = `${base_url}`;
 let popular_movies = `${base_url}/movie/popular?api_key=${api_key}`
+let people = `${base_url}/person/popular?api_key=${api_key}&language=en-US&page=1`
+
 
 export async function get_top_rated_movies() {
    let response = await fetch((top_rated_movies));
@@ -17,14 +19,27 @@ export async function get_top_rated_tv() {
    let response = await fetch((top_rated_tvs));
    let body = await response.json();
    let data = body.results;
-   console.log(top_rated_tvs);
+   
    return data;
 }
 export async function get_popular_movies() {
    let response = await fetch(popular_movies);
    let body = await response.json();
    let data = body.results;
-   
-
    return data;
 }
+export async function get_people() {
+   let response = await fetch(people);
+   let body = await response.json();
+   let data = body.results;
+   return data;
+}
+export async function get_people_detail(id) {
+   let response = await fetch(
+     `${base_url}/person/${id}?api_key=${api_key}`
+   );
+   let body = await response.json();
+   
+   
+   return body;
+ }

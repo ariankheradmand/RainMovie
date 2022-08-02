@@ -1,6 +1,7 @@
 import { hover } from '@testing-library/user-event/dist/hover';
 import React, { useState } from 'react'
 import styled from "styled-components"
+import {Modal , Modal_detail , Modal_img , Modal_title} from "./Modal"
 
 const Img_box = styled.div`
   width: 140px;
@@ -9,8 +10,14 @@ const Img_box = styled.div`
   border-radius: 8px;
   background-color: white;
   position: relative;
-  overflow: hidden;
+  
   margin: 15px 0px;
+  :hover {
+    .hover {
+      display:flex;
+    }
+
+}
 `;
 const Point_box = styled.div`
   display: flex;
@@ -30,6 +37,7 @@ const Box_cnt = styled.div `
     display: flex;
     align-items: center;
     justify-content: start;
+    position: relative;
     
 `;
 const Movies_cnt = styled.div `
@@ -66,7 +74,8 @@ const Circle = styled.circle`
  const Img = styled.img`
     width: 100%;
     height: 100%;
- 
+    border-radius: 8px;
+    
  `;
   
 
@@ -78,8 +87,31 @@ function Index(props) {
     
        <Box_cnt > {props.list.map((item) => {
          return<div className="flex-row-center">
+
+       
+
       <div className="flex-column-center small-rl-pad " >
-           <Img_box ><Img src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${item.poster_path}`}/>
+           <Img_box > 
+
+           <div className="hover">
+           <Modal> 
+           
+             <Modal_img>
+             
+               <Img src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${item.backdrop_path}`}/></Modal_img>
+             <div className="flex-coulmn-center">
+             <Modal_title>
+              <h3>{(item.title + item.name).replace('undefined','')} </h3>
+              <h4>Date : {(item.first_air_date + item.release_date).replace('undefined','')}</h4>
+              <h4>Vote Average : {item.vote_average}</h4>
+              </Modal_title>
+             <Modal_detail> <h5> {item.overview} </h5>  </Modal_detail>
+             </div>
+             </Modal>
+           </div>
+           
+           
+            <Img src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${item.poster_path}`}/>
            
            <Point_box ><div className="box">
          <div className="percent">

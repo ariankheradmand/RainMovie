@@ -1,11 +1,16 @@
 import React from 'react'
 import styled from "styled-components"
+import { NavLink } from "react-router-dom";
 
 const NavBox = styled.div`
    display:flex;
    flex-direction:cloumn;
    align-items:center;
    justify-content:center;
+
+   position: fixed;
+   top: 0;
+   z-index: 9999;
 
    background: linear-gradient(90deg ,#224B8B ,#B2DDFF);
    width: 100%;
@@ -25,15 +30,37 @@ const NavCnt = styled.div`
    
    width: 33.33333%
 `
+let activeStyle = {
+  textDecoration: "none",
+  color: "white",
+  
+};
 
 function Nav() {
   return (
     <NavBox>
        <div className='half-size flex-row-start'>
            <div className='flex-row-start tree-slice'>
-            <NavButtons href='#'>Movies</NavButtons>
+            <NavButtons href='#'>
+            <NavLink
+            to="/"
+            style={(values) => {
+            return values.isActive ? activeStyle : undefined;
+            }}
+            >
+            Movies
+            </NavLink>
+              </NavButtons>
             <NavButtons href='#'>TV Shows</NavButtons>
-            <NavButtons href='#'>People</NavButtons>
+            <NavButtons href='#'>
+            <NavLink
+            to="/People"
+            style={(values) => {
+            return values.isActive ? activeStyle : undefined;
+            }}
+            >
+            People
+            </NavLink></NavButtons>
             <NavButtons href='#'>More</NavButtons>
            </div>
 
