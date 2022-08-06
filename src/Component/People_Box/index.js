@@ -17,7 +17,7 @@ const Box = styled.a`
   border-radius:7px;
   overflow:hidden;
   position:relative;
-  
+  box-shadow: 5px 0px 10px 1px black;
 `;
 const Box_img = styled.img`
 `;
@@ -35,7 +35,7 @@ const Box_name = styled.div`
   z-index:9999;
 `
 function index(props) {
-   
+  
   return<div className='flex-coulmn-center'> 
     <Container>  {props.list.map((item) => {
        

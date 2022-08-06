@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { NavLink } from "react-router-dom";
 
 const NavBox = styled.div`
+
    display:flex;
    flex-direction:cloumn;
    align-items:center;

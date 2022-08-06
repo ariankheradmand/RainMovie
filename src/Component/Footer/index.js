@@ -6,7 +6,7 @@ let Footer = styled.div`
    flex-direction:column;
    align-items:center;
    justify-content:center;
-
+   position: relative;
    font-weight:bold;
    margin-top:24px;
 

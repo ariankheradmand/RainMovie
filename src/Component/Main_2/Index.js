@@ -2,6 +2,7 @@ import { hover } from '@testing-library/user-event/dist/hover';
 import React, { useState } from 'react'
 import styled from "styled-components"
 import {Modal , Modal_detail , Modal_img , Modal_title} from "../Main/Modal"
+import {Link} from "react-router-dom"
 
 const Img_box = styled.div`
   width: 140px;
@@ -10,7 +11,7 @@ const Img_box = styled.div`
   border-radius: 8px;
   background-color: white;
   position: relative;
-
+  box-shadow: 5px 0px 10px 1px black;
   margin: 15px 0px;
   :hover {
     .hover {
@@ -84,6 +85,7 @@ function Index(props) {
     <Box_cnt > {props.list.map((item) => {
          return<div className="flex-row-center">
       <div className="flex-column-center small-rl-pad " >
+      <Link to={`/Movie/${item.id}`}>
            <Img_box >
 
            <div className="hover">
@@ -118,6 +120,7 @@ function Index(props) {
          </div>
         </Point_box>
              </Img_box>
+             </Link>
            <Movies_txt>{item.original_title}</Movies_txt>
       
       </div>
