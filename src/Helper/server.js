@@ -62,6 +62,6 @@ export async function get_crew(id) {
   let response = await fetch(`${base_url}/movie/${id}/credits?api_key=${api_key}`)
   let body = await response.json();
   let data = body.crew;
-  console.log(data);
+
   return data;
 }

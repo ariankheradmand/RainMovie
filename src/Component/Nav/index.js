@@ -46,7 +46,7 @@ function Nav() {
             <NavLink
             to="/"
             style={(values) => {
-            return values.isActive ? activeStyle : undefined;
+            return activeStyle;
             }}
             >
             Movies
@@ -57,7 +57,7 @@ function Nav() {
             <NavLink
             to="/People"
             style={(values) => {
-            return values.isActive ? activeStyle : undefined;
+            return activeStyle;
             }}
             >
             People

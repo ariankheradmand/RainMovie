@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import Genres from "./genres";
 const Background = styled.div`
   display:flex;
   justify-content:center;
@@ -61,7 +61,7 @@ function movie_detail(props) {
         <Containers_2>
           <h1>{render.title}</h1>
         </Containers_2>
-         
+        <Genres list={genres}/> 
       </Background>
     </div>
   );
