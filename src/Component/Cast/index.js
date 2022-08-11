@@ -30,9 +30,11 @@ const Img = styled.img`
 `;
 
 function index(props) {
+  
     let render = props.list;
     const filterd = render.filter((item) =>{
         return item.profile_path != null;
+       
     })
   return (
       

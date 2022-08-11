@@ -32,7 +32,7 @@ const Box_name = styled.div`
   color:white;
   text-shadow: 0px 0px 12px white;
   position:absolute;
-  z-index:9999;
+
 `
 function index(props) {
   

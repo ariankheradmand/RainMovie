@@ -55,7 +55,7 @@ function Nav() {
             <NavButtons href='#'>TV Shows</NavButtons>
             <NavButtons href='#'>
             <NavLink
-            to="/People"
+            to="/People/"
             style={(values) => {
             return activeStyle;
             }}
@@ -66,10 +66,7 @@ function Nav() {
            </div>
 
            <div className='tree-slice flex-row-center' style={{fontSize: '50px' , color: 'white'}}>
-               <div className='white'>L</div>
-               <div className='black'>O</div>
-               <div className='white'>G</div>
-               <div className='black'>O</div>
+           <h4 data-text="RainMovie" className='NavLogo'>RainMovie</h4>
             </div>
           
            <div className='flex-row-end tree-slice'>
